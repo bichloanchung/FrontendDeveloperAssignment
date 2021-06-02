@@ -7,7 +7,7 @@ import Characters from './components/Characters';
 function App(){
   const [people, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
   useEffect(() =>{
     async function fetchCharacter() {
       let res = await fetch('https://swapi.dev/api/people/?format=json');
@@ -18,11 +18,13 @@ function App(){
 
     fetchCharacter();
   }, []);
+
   return (
     <>
       <Router>
         <Navbar />
           <Container>
+
             {loading ? (
               <Dimmer active inverted>
                 <Loader>Loading</Loader>
@@ -32,9 +34,8 @@ function App(){
                 <Characters data={people}/>
               </Router>
             )}
-            
+          
           </Container>
-
       </Router>
     </>
   );
