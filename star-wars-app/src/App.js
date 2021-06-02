@@ -1,7 +1,32 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
 
-function App() {
+
+function App(){
+  const [people, setCharacters] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() =>{
+    async function fetchCharacter() {
+      let res = await fetch('https://swapi.dev/api/people/?format=json');
+      let data = res.json();
+      setCharacters(data.results);
+    }
+
+    fetchCharacter();
+  }, []);
+  return (
+    <div className='App'>
+        Hello
+    </div>
+  );
+}
+
+
+
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +45,6 @@ function App() {
       </header>
     </div>
   );
-}
+}*/
 
 export default App;
