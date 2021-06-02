@@ -1,7 +1,8 @@
-//import logo from './logo.svg';
 import React, {useState, useEffect} from 'react';
-import './App.css';
-
+import Navbar from './components/Navbar';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {Container, Dimmer, Loader } from 'semantic-ui-react';
+import Characters from './components/Characters';
 
 function App(){
   const [people, setCharacters] = useState([]);
@@ -10,41 +11,33 @@ function App(){
   useEffect(() =>{
     async function fetchCharacter() {
       let res = await fetch('https://swapi.dev/api/people/?format=json');
-      let data = res.json();
+      let data = await res.json();
       setCharacters(data.results);
+      setLoading(false);
     }
 
     fetchCharacter();
   }, []);
   return (
-    <div className='App'>
-        Hello
-    </div>
+    <>
+      <Router>
+        <Navbar />
+          <Container>
+            {loading ? (
+              <Dimmer active inverted>
+                <Loader>Loading</Loader>
+              </Dimmer>
+            ) : (
+              <Router exact path='/characters'>
+                <Characters data={people}/>
+              </Router>
+            )}
+            
+          </Container>
+
+      </Router>
+    </>
   );
 }
-
-
-
-
-/*function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}*/
 
 export default App;
