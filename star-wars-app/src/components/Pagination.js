@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import './Pagination.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
     const pageNumbers = [];
@@ -7,21 +9,24 @@ const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
         pageNumbers.push(i);
     }
     return (
-        <div className='container'>
-            <div className='row'>
-                <ul className='pagination'>
-                    {pageNumbers.map(number => (
-                    <li key={number} className='page-item'>
+        <nav>
+            <p></p>
+            <ul class="pagination pg-blue justify-content-center">
+                <li class="page-item disabled">
+                <a class="page-link" tabindex="-1">Previous</a>
+                </li>
+                {pageNumbers.map(number => (
+                    <li key={number} class='page-item'>
                         <a onClick={() => paginate(number)} href='!#' className='page-link'>
                             {number}
                         </a>
                     </li>
-                    ))}
-                </ul>
-
-            </div>
-
-        </div>
+                ))}
+                <li class="page-item disabled">
+                <a class="page-link">End</a>
+                </li>
+            </ul>
+        </nav>
     );
 };
 

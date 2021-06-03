@@ -1,12 +1,10 @@
 import './App.css';
-//import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router } from 'react-router-dom';
 import {Container, Dimmer, Loader } from 'semantic-ui-react';
 import Characters from './components/Characters';
 import Pagination from './components/Pagination';
-
 
 
 function App(){
@@ -46,17 +44,16 @@ function App(){
             ) : (
               <Router exact path='/characters'>
                 <Characters data={currentPeople}/>
-                <Pagination 
-                  peoplePerPage={peoplePerPage}
-                  totalPeople={people.length}
-                  paginate={paginate}  
-                />
+                <Pagination  
+                    peoplePerPage={peoplePerPage}
+                    totalPeople={people.length}
+                    paginate={paginate}  
+                  />  
               </Router>
             )}
           
           </Container>
-      </Router>
-      
+      </Router>  
     </div>
   );
 }
