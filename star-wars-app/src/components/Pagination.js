@@ -23,7 +23,7 @@ const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
                     </li>
                 ))}
                 <li class="page-item disabled">
-                <a class="page-link">End</a>
+                <a class="page-link">Next</a>
                 </li>
             </ul>
         </nav>
