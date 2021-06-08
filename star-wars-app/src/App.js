@@ -6,24 +6,23 @@ import {Container, Dimmer, Loader } from 'semantic-ui-react';
 import Characters from './components/Characters';
 import Pagination from './components/Pagination';
 
-
-function App(){
+const App = (props) => {
   const [people, setCharacters] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [peoplePerPage] = useState(6);
 
-  
   useEffect(() =>{
     async function fetchCharacter() {
       let res = await fetch('https://swapi.dev/api/people/?format=json');
       let data = await res.json();
       setCharacters(data.results);
-      setLoading(false);
+      setLoading(false);  
     }
 
     fetchCharacter();
+    
   }, []);
 
   const indexOfLastPeople = currentPage * peoplePerPage;
@@ -31,6 +30,7 @@ function App(){
   const currentPeople = people.slice(indexOfFirstPeople, indexOfLastPeople);
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
+
   return (
     <div>
       <Router>
@@ -44,6 +44,7 @@ function App(){
             ) : (
               <Router exact path='/characters'>
                 <Characters data={currentPeople}/>
+                
                 <Pagination  
                     peoplePerPage={peoplePerPage}
                     totalPeople={people.length}
