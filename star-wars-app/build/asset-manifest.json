@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/FrontendDeveloperAssignment/static/css/main.ae5d6674.chunk.css",
+    "main.js": "/FrontendDeveloperAssignment/static/js/main.123f93fa.chunk.js",
+    "main.js.map": "/FrontendDeveloperAssignment/static/js/main.123f93fa.chunk.js.map",
+    "runtime-main.js": "/FrontendDeveloperAssignment/static/js/runtime-main.6f87c895.js",
+    "runtime-main.js.map": "/FrontendDeveloperAssignment/static/js/runtime-main.6f87c895.js.map",
+    "static/css/2.69ecbfb9.chunk.css": "/FrontendDeveloperAssignment/static/css/2.69ecbfb9.chunk.css",
+    "static/js/2.48a40219.chunk.js": "/FrontendDeveloperAssignment/static/js/2.48a40219.chunk.js",
+    "static/js/2.48a40219.chunk.js.map": "/FrontendDeveloperAssignment/static/js/2.48a40219.chunk.js.map",
+    "static/js/3.7b3498f9.chunk.js": "/FrontendDeveloperAssignment/static/js/3.7b3498f9.chunk.js",
+    "static/js/3.7b3498f9.chunk.js.map": "/FrontendDeveloperAssignment/static/js/3.7b3498f9.chunk.js.map",
+    "index.html": "/FrontendDeveloperAssignment/index.html",
+    "static/css/2.69ecbfb9.chunk.css.map": "/FrontendDeveloperAssignment/static/css/2.69ecbfb9.chunk.css.map",
+    "static/css/main.ae5d6674.chunk.css.map": "/FrontendDeveloperAssignment/static/css/main.ae5d6674.chunk.css.map",
+    "static/js/2.48a40219.chunk.js.LICENSE.txt": "/FrontendDeveloperAssignment/static/js/2.48a40219.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/FrontendDeveloperAssignment/static/media/outline-icons.ddae9b1b.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f87c895.js",
+    "static/css/2.69ecbfb9.chunk.css",
+    "static/js/2.48a40219.chunk.js",
+    "static/css/main.ae5d6674.chunk.css",
+    "static/js/main.123f93fa.chunk.js"
+  ]
+}

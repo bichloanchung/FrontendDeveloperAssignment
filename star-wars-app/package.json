@@ -2,7 +2,7 @@
   "name": "star-wars-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bichloanchung.github.io/star-wars",
+  "homepage": "https://bichloanchung.github.io/FrontendDeveloperAssignment",
   "author": "Thi Bich Loan Chung",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
