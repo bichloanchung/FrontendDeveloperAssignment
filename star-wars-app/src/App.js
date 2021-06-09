@@ -43,8 +43,8 @@ const App = (props) => {
               </Dimmer>
             ) : (
               <Router exact path='/characters'>
+                <h1 align='center'><strong>Star Wars Characters</strong></h1>
                 <Characters data={currentPeople}/>
-                
                 <Pagination  
                     peoplePerPage={peoplePerPage}
                     totalPeople={people.length}

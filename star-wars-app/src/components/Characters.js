@@ -1,34 +1,42 @@
-import React, { useState } from 'react';
+import React, {useState, useEffect} from 'react';
 import { Card, Grid } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import { Popup } from 'semantic-ui-react';
 
 export default function Characters({data, loading}) {
-    if (loading) {
-        return <h2> Loading ... </h2>
-    }
-    const [searchTerm, setSearchTerm] = useState('');
     
+    const [search, setSearch] = useState('');
+    const [filteredPeople, setfilteredPeople] = useState([]);
+    
+    useEffect( () => {
+        setfilteredPeople (
+            data.filter( (people) => {
+                if (search == null){
+                    return people
+                }else if (people.name.toLowerCase().includes(search.toLowerCase())){
+                    return people
+                }
+            })
+        )
+
+    }, [search, data])
+
+    if (loading) {
+        return <p>Loading ...</p>
+    }
+
     return (
         <div align='center'>
-            <h1><strong>Star Wars Characters</strong></h1>
-            <p><i>Enter name to be searched!</i></p> 
-            <input 
-                type='text'
+            <h3><i> Enter name here to be searched! </i></h3>
+            <input
+                class='form-control-lg'
+                type = 'text'
                 placeholder='Search...'
-                onChange={(event) =>{
-                    setSearchTerm(event.target.value);
-                }}/>
+                onChange={ e => setSearch(e.target.value)}
+            />
             <p></p>
             <Grid columns={2}>
-                {data.filter((people) =>{
-                    if(searchTerm == null){
-                        return people
-                    }
-                    else if(people.name.toLowerCase().includes(searchTerm.toLowerCase())){
-                        return people
-                    }
-                }).map((people, i) => {
+                {filteredPeople.map((people, i) => {
                     return (
                         <Grid.Column key={i}>
                             <Card >
@@ -37,9 +45,9 @@ export default function Characters({data, loading}) {
                                         trigger={<Card.Header align='center'>{people.name}</Card.Header>}
                                         key={i}
                                         position='right center'
-                                        
+                                            
                                     >
-                                       <Card.Description>
+                                    <Card.Description>
                                         <strong>Height</strong>
                                         <p>{people.height}</p>
                                         <strong>Mass</strong>
@@ -55,7 +63,8 @@ export default function Characters({data, loading}) {
                                 </Card.Content>
                             </Card>
                         </Grid.Column>
-                    )
+                    )  
+                    
                 })}
             </Grid>
         </div>

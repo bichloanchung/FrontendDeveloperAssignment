@@ -1,5 +1,5 @@
 import React from 'react';
-import './Pagination.css'
+import './Pagination.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
