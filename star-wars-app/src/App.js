@@ -11,7 +11,7 @@ const App = (props) => {
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [peoplePerPage] = useState(6);
+  const [peoplePerPage] = useState(10);
 
   useEffect(() =>{
     async function fetchCharacter() {
@@ -32,7 +32,7 @@ const App = (props) => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   return (
-    <div>
+    <div align = 'center'>
       <Router>
         <Navbar />
           <Container>

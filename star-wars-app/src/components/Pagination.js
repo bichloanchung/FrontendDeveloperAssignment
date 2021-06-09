@@ -1,6 +1,5 @@
 import React from 'react';
 import './Pagination.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
     const pageNumbers = [];
@@ -22,6 +21,12 @@ const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
                         </a>
                     </li>
                 ))}
+                <li class="page-item" href='!#'>
+                <a class="page-link">2</a>
+                </li>
+                <li class="page-item" href='!#'>
+                <a class="page-link">3</a>
+                </li>
                 <li class="page-item disabled">
                 <a class="page-link">Next</a>
                 </li>
