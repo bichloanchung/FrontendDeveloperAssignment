@@ -9,7 +9,7 @@ const Pagination = ({peoplePerPage, totalPeople, paginate}) => {
         pageNumbers.push(i);
     }
     return (
-        <nav>
+        <nav align='center'>
             <p></p>
             <ul class="pagination pg-blue justify-content-center">
                 <li class="page-item disabled">
